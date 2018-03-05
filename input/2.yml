@@ -1,0 +1,4 @@
+- 'and'
+- ['=', 'country', 'Russia']
+- ['!=', 'state', 1]
+- ['!=', 'email', 'email'] # instead of gravatar

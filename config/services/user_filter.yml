@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Component\UserFilter\UserFilterManagerInterface:
+    class: App\Component\UserFilter\UserFilterManager
+
+  App\Component\UserFilter\Filter\:
+    resource: '%kernel.root_dir%/Component/UserFilter/Filter/*'
+    tags: ['user_filter.filter']
+
+  App\Component\UserFilter\FilterCompilerInterface:
+    class: App\Component\UserFilter\Compiler\ArrayCompiler
+    arguments: [!tagged user_filter.filter]
+
+  App\Component\UserFilter\FilterExecutorInterface:
+    class: App\Component\UserFilter\Doctrine\DoctrineExecutor

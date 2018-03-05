@@ -1,0 +1,9 @@
+- 'or'
+- ['!=', 'name', '']
+-
+  - 'and'
+  - ['=', 'email', 'user@domain.com']
+  -
+    - 'or'
+    - ['=', 'state', 1]
+    - ['!=', 'country', 'Russia']
